@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#eff3f9">
+<title>나의 첫 번째 계산기</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 20px 12px;
+  background: #eff3f9;
+  color: #192c48;
+  font-family: system-ui, sans-serif;
+}
+main {
+  width: min(100%, 390px);
+  background: white;
+  padding: 24px;
+  border-radius: 26px;
+  box-shadow: 0 16px 48px #20345614;
+}
+h1 { font-size: clamp(21px, 6vw, 27px); margin: 0 0 24px; }
+.tag { font-size: 12px; color: #536b8b; letter-spacing: .12em; }
+.screen { padding: 18px; border-radius: 16px; background: #f1f5fa; }
+#expression {
+  min-height: 22px;
+  color: #536b8b;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+output {
+  display: block;
+  text-align: right;
+  font-size: clamp(22px, 7vw, 32px);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+  margin-top: 8px;
+}
+#message {
+  min-height: 44px;
+  margin: 14px 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #536b8b;
+}
+#message.error { color: #b12838; }
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+}
+button {
+  min-height: 60px;
+  border: 0;
+  border-radius: 14px;
+  font: inherit;
+  font-size: 23px;
+  color: #192c48;
+  background: #f0f3f8;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+button:active { transform: scale(.95); }
+button:focus-visible { outline: 3px solid #315fc4; }
+.operator { background: #e3ecff; color: #254c9b; }
+.clear { background: #ffe7e7; color: #a93140; }
+.equals { background: #315fc4; color: white; }
+.zero { grid-column: span 2; }
+footer { text-align: center; font-size: 12px; color: #536b8b; margin-top: 20px; }
+@media (max-width: 340px) {
+  main { padding: 16px; }
+  .keys { gap: 6px; }
+}
+</style>
+</head>
+<body>
+<main aria-labelledby="title">
+  <p class="tag">MY FIRST CALCULATOR</p>
+  <h1 id="title">나의 첫 번째 계산기</h1>
+  <div class="screen">
+    <div id="expression" aria-label="진행 중인 연산"></div>
+    <output id="display" aria-label="입력 및 계산 결과" aria-live="polite
