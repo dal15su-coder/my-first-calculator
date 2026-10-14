@@ -1,0 +1,26 @@
+{
+  "id": "./",
+  "name": "나의 첫 번째 계산기",
+  "short_name": "나의 계산기",
+  "description": "인터넷 없이도 사용할 수 있는 나의 첫 번째 계산기",
+  "lang": "ko",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#eff3f9",
+  "theme_color": "#eff3f9",
+  "icons": [
+    {
+      "src": "./icons/calculator-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/calculator-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
